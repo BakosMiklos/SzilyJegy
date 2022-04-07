@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styleIndex.css">
   <link rel="stylesheet" href="footer/styleFooter.css">
   <link rel="stylesheet" href="header/styleHeader.css">
+  <link rel="stylesheet" href="rendezvenyStyle.scss">
   <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

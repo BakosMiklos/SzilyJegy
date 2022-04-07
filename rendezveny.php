@@ -3,13 +3,15 @@ $con = mysqli_connect("localhost","root","","szilyjegy");
 $products = "SELECT * FROM rendezvenyek";
 $products_run = mysqli_query($con, $products);
 
-if(mysqli_num_rows($products_run) > 0)
-{
-    foreach($products_run as $proditems) :
-        ?>
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
+?>
+<div class="container">
+    <div class="row">
+<?php
+        if(mysqli_num_rows($products_run) > 0)
+        {
+            foreach($products_run as $proditems) :
+                ?>
+                <div class="col-sm-5 col-md-4 col-lg-4">
                     <div class="card">
                         <img src=<?= $proditems['kep']; ?> class="card-img-top" alt="...">
                         <div class="card-body">
@@ -19,12 +21,9 @@ if(mysqli_num_rows($products_run) > 0)
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <?php
-    endforeach;
-}
+                <?php
+            endforeach;
+        }
 ?>
-
-
-
+    </div>
+</div>

@@ -77,20 +77,20 @@ session_start();
                                     <hr class="dropdown-divider">
                                 </li>
                                 <!-- Felhasználó név -->
-                                <form action="header.php" method="post"></form>
+                                <form method="post">
                                 <table>
                                     <tr>
-                                        <td>Felhasználó név</td>
+                                        <td>Email-cím</td>
                                     </tr>
                                     <tr>
-                                        <td><input type='text' name='nev'></td>
+                                        <td><input type='text' name='email'></td>
                                     </tr>
                                 </table>
 
                                 <!-- Jelszó -->
                                 <table>
                                     <tr>
-                                        <td>asd</td>
+                                        <td>Jelszó</td>
                                     </tr>
                                     <tr>
                                         <td><input type='password' name='jelszo'></td>
@@ -98,7 +98,8 @@ session_start();
                                 </table>
                                 <a href="http://" id="elf_jelsz">Elfelejtettem a jelszavam<br><br></a>
                                 <input type="submit" value="Bejelentkezés" name="gomb" class="btn btn-outline-success gomb">
-                                <a href="header/headerRegisztracio/regisztracio.php"><input type="submit" value="Regisztráció" class="btn btn-outline-success"></a>
+                                <a href="header/headerRegisztracio/regisztracio.php"><input type="button" value="Regisztráció" class="btn btn-outline-success"></a>
+                                </form>
                             </ul>
                         </li>
                     </ul>
@@ -113,23 +114,28 @@ session_start();
                         print("Adatbázis kapcsolódási hiba!  " . mysqli_connect_error());
                     }
 
-                    $nev = $_POST['nev'];
+                    $email = $_POST['email'];
                     $jelszo = $_POST['jelszo'];
+                    $secure_pass = md5($jelszo);
 
-                    $query = "SELECT * FROM vasarlo WHERE vezetekNev='$nev' AND jelszo='$jelszo'";
+                    $query = "SELECT * FROM vasarlo WHERE email LIKE '$email' AND jelszo LIKE '$secure_pass'";
                     $results = mysqli_query($con, $query);
 
                     if(mysqli_num_rows($results) > 0)
                     {
-                        $_SESSION['nev'] = $nev;
+                        $_SESSION['email'] = $email;
+                        $row = mysqli_fetch_array($results);
+                        $vezetekNev = $row['vezetekNev']; 
+                        $keresztNev = $row['keresztNev']; 
+                        
                         ?>
-                        <a href='index.php'>Sikeres belépés</a>
+                        <a href='index.php'>Sikeres belépés <?php echo $vezetekNev ." ". $keresztNev?></a>
                         <?php
                     }
                     else
                     {
                         ?>
-                        <a href='Bejelentkezes.php'>Nem létezik ilyen felhasználó!</a>
+                        <a href='index.php'>Nem létezik ilyen felhasználó!</a>
                         <?php
                     }
                 }

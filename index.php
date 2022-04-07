@@ -13,6 +13,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <title>Főoldal</title>
+  <style>
+    body{
+      margin-top: 4%;
+    }
+
+    .card img{
+      width: 25.95rem;
+      height: 16rem;
+    }
+  </style>
 </head>
 <body>
 

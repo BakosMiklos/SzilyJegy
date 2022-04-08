@@ -2,7 +2,6 @@
 session_start();
 error_reporting(0);
 
-
 ?>
 <header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -82,9 +81,18 @@ error_reporting(0);
                                 }
                                 else
                                 {
+                                    if($_SESSION['bejelentkezve']=="altalanos")
+                                    {
                                     ?>
-                                    <span color="white"><?php echo $_SESSION['vezetekNev'] ." ". $_SESSION['keresztNev']?></span><br>
+                                    <span color="white"><?php echo $_SESSION['keresztNev']?></span><br>
                                     <?php
+                                    }
+                                    else
+                                    {
+                                        ?>
+                                        <span color="white"><?php echo $_SESSION['szervezetNev']?></span><br>
+                                        <?php
+                                    }
                                 }
                                 ?>
                             </a>
@@ -124,8 +132,6 @@ error_reporting(0);
                                 else
                                 {
                                     ?>
-                                    
-                                    
                                     <a href="kijelentkezes.php"><button class="btn btn-outline-success gomb" name="kijelentkezes">Kijelentkezés</button></a>
                                     
                                     <?php
@@ -157,15 +163,32 @@ error_reporting(0);
                         $keresztNev = $row['keresztNev'];
                         $_SESSION['vezetekNev'] = $vezetekNev;
                         $_SESSION['keresztNev'] = $keresztNev;
+                        $_SESSION['bejelentkezve']="altalanos";
                         ?>
-                        <a href='index.php'>Sikeres belépés <?php echo $vezetekNev ." ". $keresztNev?></a>
+                        <script>window.location.href = 'index.php';</script>
                         <?php
                     }
                     else
                     {
-                        ?>
-                        <a href='index.php'>Nem létezik ilyen felhasználó!</a>
-                        <?php
+                        $query = "SELECT * FROM szervezok WHERE email LIKE '$email' AND jelszo LIKE '$secure_pass'";
+                        $results = mysqli_query($con, $query);
+                        if(mysqli_num_rows($results) > 0)
+                        {
+                            $_SESSION['email'] = $email;
+                            $row = mysqli_fetch_array($results);
+                            $szervezetNev = $row['szervezetNev'];                             
+                            $_SESSION['szervezetNev'] = $szervezetNev;
+                            $_SESSION['bejelentkezve']="szervezo";
+                            ?>
+                            <script>window.location.href = 'index.php';</script>
+                            <?php
+                        }
+                        else
+                        {
+                            ?>
+                            <a href='index.php'>Nem létezik ilyen felhasználó!</a>
+                            <?php
+                        }
                     }
                     
                 }

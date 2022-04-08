@@ -1,0 +1,23 @@
+.teszt {
+    width: 350px;
+    color: white;
+}
+
+#helyKoz {
+    margin-right: 1%;
+}
+
+table {
+    color: white;
+    margin-left: 4%;
+}
+
+#elf_jelsz {
+    margin-left: 4%;
+    text-decoration: none;
+    color: green;
+}
+
+.gomb {
+    margin-left: 4%;
+}

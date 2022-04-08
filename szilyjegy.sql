@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Ápr 06. 13:40
--- Kiszolgáló verziója: 10.1.39-MariaDB
--- PHP verzió: 7.3.5
+-- Létrehozás ideje: 2022. Ápr 08. 14:26
+-- Kiszolgáló verziója: 10.4.24-MariaDB
+-- PHP verzió: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -55,6 +54,13 @@ CREATE TABLE `rendezvenyek` (
   `eladottJegyekSzama` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
+--
+-- A tábla adatainak kiíratása `rendezvenyek`
+--
+
+INSERT INTO `rendezvenyek` (`rendezvenyID`, `szervezoID`, `nev`, `reszveteliMod`, `rendezvenyDatuma`, `helyszin`, `leiras`, `jegyAr`, `kep`, `elerhetoJegyekSzama`, `eladottJegyekSzama`) VALUES
+(10, 1, 'Anyád', 0, '2022-04-23 00:00:00', 'Budapest Park', 'asdasd', 30, 'kepek/mokus.jpg', 52, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -79,7 +85,7 @@ CREATE TABLE `szervezok` (
 --
 
 INSERT INTO `szervezok` (`szervezoID`, `szervezetNev`, `email`, `jelszo`, `mobilSzam`, `telefonSzam`, `megye`, `varos`, `irSzam`, `cim`) VALUES
-(1, 'Másik KFT.', 'masikkft@gmailcom', 'asd1234', '06207594128', '06306987412', 'Pest', 'Csepel', '1214', 'kavics u, 23.');
+(1, 'Másik KFT.', 'masikkft@gmailcom', '1cd8e7658bb6db26fed1ce17940b7dbd', '06207594128', '06306987412', 'Pest', 'Csepel', '1214', 'kavics u, 23.');
 
 -- --------------------------------------------------------
 
@@ -118,7 +124,8 @@ CREATE TABLE `vasarlo` (
 --
 
 INSERT INTO `vasarlo` (`vasarloID`, `email`, `jelszo`, `vezetekNev`, `keresztNev`, `telefonSzam`, `megye`, `varos`, `irSzam`, `cim`) VALUES
-(1, 'lapuscica@gmail.com', 'asd123', 'Maday', 'Gábor', '06205984318', 'Pest', 'Érd', '2030', 'Szénégető u, 1.');
+(1, 'lapuscica@gmail.com', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'Maday', 'Gábor', '06205984318', 'Pest', 'Érd', '2030', 'Szénégető u, 1.'),
+(2, 'bakosmik74@gmail.com', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'Bakos', 'Miklós', '06306257510', 'Szabolcs-Szatmár-Bereg', 'Fábiánháza', '4354', 'Ősz utca 43');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -172,7 +179,7 @@ ALTER TABLE `rendeles`
 -- AUTO_INCREMENT a táblához `rendezvenyek`
 --
 ALTER TABLE `rendezvenyek`
-  MODIFY `rendezvenyID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `rendezvenyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT a táblához `szervezok`
@@ -190,7 +197,7 @@ ALTER TABLE `termekleiras`
 -- AUTO_INCREMENT a táblához `vasarlo`
 --
 ALTER TABLE `vasarlo`
-  MODIFY `vasarloID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `vasarloID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Megkötések a kiírt táblákhoz

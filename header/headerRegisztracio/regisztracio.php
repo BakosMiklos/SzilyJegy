@@ -36,6 +36,32 @@ include("kapcs.inc.php");
         <a href='javascript://' onclick='history.back();'>Vissza</a>
     </div>
 </form>
+
+</div>
+
+<div id="szervezoReg">
+<button id="vasarlo" class="btn btn-outline-success gomb">Általános vásárlóként szeretnék regisztrálni</button>
+<form method="post">
+    <div>
+        <input type='text' name='szerv_nev' placeholder='Szervezet neve'><br><br>
+        <input type='email' name='email_cim' placeholder='Email'><br><br>
+        <input type='password' name='jelszo1' placeholder='Jelszó' ><br><br>
+        <input type='password' name='jelszo2' placeholder='Jelszó mégegyszer'><br><br>
+        <input type='text' name='tel_szam' placeholder='Telefonszám'><br><br>
+        <input type='text' name='mobil_szam' placeholder='Mobilszám'><br><br>
+        <input type='text' name='ir_szam' placeholder='Irányítószám'><br><br>
+        <input type='text' name='megye' placeholder='Megye'><br><br>
+        <input type='text' name='varos' placeholder='Város'><br><br>
+        <input type='text' name='cim' placeholder='Cím'><br><br>
+    </div>
+    <!-- Gomb -->
+    <div>
+        <input type='submit' name='gombSzervezo' value='Regisztrálás'>
+        <!-- Vissza -->
+        <a href='javascript://' onclick='history.back();'>Vissza</a>
+    </div>
+</form>
+</div>
 <?php
 if(isset($_POST['gombAltalanos']))
 {
@@ -87,32 +113,7 @@ if(isset($_POST['gombAltalanos']))
         }
     }
 }
-?>
-</div>
 
-<div id="szervezoReg">
-<button id="vasarlo" class="btn btn-outline-success gomb">Általános vásárlóként szeretnék regisztrálni</button>
-<form method="post">
-    <div>
-        <input type='text' name='szerv_nev' placeholder='Szervezet neve'><br><br>
-        <input type='email' name='email_cim' placeholder='Email'><br><br>
-        <input type='password' name='jelszo1' placeholder='Jelszó' ><br><br>
-        <input type='password' name='jelszo2' placeholder='Jelszó mégegyszer'><br><br>
-        <input type='text' name='tel_szam' placeholder='Telefonszám'><br><br>
-        <input type='text' name='mobil_szam' placeholder='Mobilszám'><br><br>
-        <input type='text' name='ir_szam' placeholder='Irányítószám'><br><br>
-        <input type='text' name='megye' placeholder='Megye'><br><br>
-        <input type='text' name='varos' placeholder='Város'><br><br>
-        <input type='text' name='cim' placeholder='Cím'><br><br>
-    </div>
-    <!-- Gomb -->
-    <div>
-        <input type='submit' name='gombSzervezo' value='Regisztrálás'>
-        <!-- Vissza -->
-        <a href='javascript://' onclick='history.back();'>Vissza</a>
-    </div>
-</form>
-<?php
 if(isset($_POST['gombSzervezo']))
 {
     $szerv_nev = $_POST['szerv_nev'];
@@ -165,7 +166,6 @@ if(isset($_POST['gombSzervezo']))
     }
 }
 ?>
-</div>
 <script src="regisztracio_segito.js"></script>
 <script src="../../js/bootstrap.js"></script>
 </body>

@@ -36,13 +36,8 @@
         $szervezoID = mysqli_query($con,"SELECT * FROM vasarlo WHERE vasarloID='".$_GET['vasarlo']."';") or die ("Nem sikerült a lekérdezés!");
         $KivalasztottOldal = $_GET['vasarlo'];
 
-        // Táblában szereplő elemek
-        if($szervezoID->num_rows > 0)
-        {
-            while($row = $szervezoID->fetch_assoc()
-            {
-
-                // Változóknak értékadás
+        if($szervezoID->num_rows > 0){
+            while($row = $szervezoID->fetch_assoc()){
                 $email = $row["email"];
                 $jelszo = $row["jelszo"];
                 $vezetekNev = $row["vezetekNev"];

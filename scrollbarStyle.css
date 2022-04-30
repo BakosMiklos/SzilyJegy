@@ -1,0 +1,12 @@
+/* Görgők háttere */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: #212429;
+}
+
+/* Görgő sáv */
+::-webkit-scrollbar-thumb {
+    background: #198754;  
+    border-radius: 10px;
+}

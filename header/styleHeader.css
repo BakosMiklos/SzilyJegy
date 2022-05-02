@@ -1,0 +1,52 @@
+.varosok {
+    color: white;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.scroll {
+    overflow: scroll;
+    height: 7rem;
+    width: 100%;
+}
+
+@media screen and (min-width: 1080px) {
+    .scroll {
+        overflow: scroll;
+        height: 13rem;
+        width: 100%;
+    }
+}
+
+.scroll2 {
+    overflow: scroll;
+    height: 9.125rem;
+    width: 100%;
+}
+
+.teszt {
+    width: 350px;
+    color: white;
+}
+
+#helyKoz {
+    margin-right: 1%;
+}
+
+table {
+    color: white;
+    margin-left: 4%;
+}
+
+#elf_jelsz {
+    margin-left: 4%;
+    text-decoration: none;
+    color: green;
+}
+
+.gomb {
+    margin-left: 4%;
+}

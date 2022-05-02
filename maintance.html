@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Nem elérhető</title>
+      <!-- Ideiglenes stílus - amíg nincs fájlja -->
+    <style>
+      .gradient-custom-3 {
+        background: #84fab0;
+        background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+        background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+      }
+
+      .gradient-custom-4 {
+        background: #84fab0;
+        background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+        background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+      }
+
+      body {
+        margin-top: 1%;
+        background: #84fab0;
+        background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+        background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+      }
+
+      #kartya_bg {background-color: #212429;}
+
+      * {color: #198754;}
+
+      #altalanosReg {
+        margin-top: 15%;
+      }
+
+      .kartya_szele {
+        margin-left: 7%;
+        margin-right: 7%;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .kartya_szele {
+          margin-left: 1%;
+          margin-right: 1%;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div id="altalanosReg">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;" id="kartya_bg">
+                            <div class="card-body p-5">
+                                <h4 class="text-uppercase text-center mb-2">Ez az oldal jelenleg nem elérhető!</h4>
+                                <h6 class="text-uppercase text-center mb-5">Kérjük nézzen vissza később.</h6>
+                            </div>
+                            <a href='javascript://' onclick='history.back();' class="btn btn-outline-success gomb btn-sm" style="border-radius: 15px;">Vissza</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

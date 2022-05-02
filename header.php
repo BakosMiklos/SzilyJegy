@@ -134,6 +134,10 @@ error_reporting(0);
                                     }
                                     ?>
                                     <tr></tr>
+                                    <?php
+                                    if($osszeg>0)
+                                    {
+                                    ?>
                                     <tr>
                                         <td>A fizetendő összeg: </td>
                                         <td><?=$osszeg?>Ft</td>
@@ -141,6 +145,17 @@ error_reporting(0);
                                     <tr>
                                         <td><a href="fizetes.php?fizetes=igen"><input type="submit" name="fizetes" value="Fizetek" class="btn btn-outline-success"></a></td>
                                     </tr>
+                                    <?php
+                                    }
+                                    else
+                                    {
+                                        ?>
+                                        <tr>
+                                            <td colspan="2">A kosarad üres! </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                    ?>
                                 </table>
                             </ul>
                         </li>
